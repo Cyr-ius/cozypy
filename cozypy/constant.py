@@ -25,13 +25,25 @@ class DeviceType(TextEnum):
 
 
 class DeviceState(TextEnum):
+    MANUFACTURER_NAME_STATE = 'core:ManufacturerNameState'
+    WH_CAPACITY_STATE = 'io:DHWCapacityState'
     AWAY_STATE = 'core:HolidaysModeState'
+    WH_MODE_STATE = 'io:DHWModeState'
     WH_AWAY_STATE = 'io:DHWAbsenceModeState'
+    WH_AWAY_MODE_DURATION_STATE = 'io:AwayModeDurationState'
     WH_BOOST_STATE = 'io:DHWBoostModeState'
+    WH_BOOST_MODE_DURATION_STATE = 'core:BoostModeDurationState'   
     WH_SHOWER_REMAINING_STATE = 'core:NumberOfShowerRemainingState'
     WH_SHOWER_CAPACITY_STATE = 'core:ExpectedNumberOfShowerState'
     WH_HEATING_STATUS_STATE = 'core:HeatingStatusState'
+    WH_STATUS_STATE = 'core:StatusState'
     WH_TANK_STATE = 'core:NumberOfTankState'
+    WH_WATER_VOLUME_ESTIMATION_STATE = 'core:V40WaterVolumeEstimationState'
+    WH_MIDDLE_W_TEMPERATURE_STATE = 'io:MiddleWaterTemperatureState'
+    WH_ERROR_STATE = 'io:DHWErrorState'
+    ANTI_LEGIONELLOSIS_STATE = 'io:AntiLegionellosisState'
+    OPERATING_RANGE_STATE = 'io:OperatingRangeState'
+    OPERATING_MODE_CAPABILITIES_STATE = 'io:OperatingModeCapabilitiesState'
     OPERATING_MODE_STATE = 'core:OperatingModeState'
     TARGETING_HEATING_LEVEL_STATE = 'io:TargetHeatingLevelState'
     OCCUPANCY_STATE = "core:OccupancyState"
@@ -41,6 +53,11 @@ class DeviceState(TextEnum):
     TARGET_TEMPERATURE_STATE = "core:TargetTemperatureState"
     ON_OFF_STATE = "core:OnOffState"
     ELECTRIC_ENERGY_CONSUMPTION_STATE = "core:ElectricEnergyConsumptionState"
+    POWER_HEAT_ELECTRICAL_STATE = "io:PowerHeatElectricalState"
+    POWER_HEAT_PUMP_STATE = "io:PowerHeatPumpState"
+    HEAT_PUMP_OPERATING_TIME_STATE = 'io:HeatPumpOperatingTimeState'
+    ELECTRIC_BOOSTER_OPERATING_TIME_STATE = 'io:ElectricBoosterOperatingTimeState'
+
 
 class OnOffState(TextEnum):
     ON = "on"
