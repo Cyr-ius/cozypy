@@ -19,8 +19,8 @@ COZYTOUCH_ENDPOINTS = {
 }
 
 USER_AGENT = "Home assistant/Cozytouch"
+API_THROTTLE = 60  # Delay minimum between API call
 
-API_THROTTLE = 60 # Delay minimum between API call
 
 class DeviceType(TextEnum):
     """Device type."""
@@ -46,7 +46,9 @@ class DeviceState(TextEnum):
     ABSENCE_END_DATE_STATE = "core:AbsenceEndDateState"
     ABSENCE_START_DATE_STATE = "core:AbsenceStartDateState"
     AWAY_STATE = "core:HolidaysModeState"
-    BOOST_ELECTRIC_POWER_CONSUMPTION_STATE = "core:BoostElectricPowerConsumptionState"  # int
+    BOOST_ELECTRIC_POWER_CONSUMPTION_STATE = (
+        "core:BoostElectricPowerConsumptionState"  # int
+    )
     BOOST_END_DATE_STATE = "core:BoostEndDateState"  # dict
     BOOST_MODE_DURATION_STATE = "core:BoostModeDurationState"  # int
     BOOST_START_DATE_STATE = "core:BoostStartDateState"  # dict
@@ -55,7 +57,9 @@ class DeviceState(TextEnum):
     COMFORT_TEMPERATURE_STATE = "core:ComfortRoomTemperatureState"
     CONNECTIVITY_STATE = "core:ConnectivityState"
     CONTACT_STATE = "core:ContactState"
-    CONTROL_WATER_TARGET_TEMPERATURE_STATE = "core:ControlWaterTargetTemperatureState"  # int
+    CONTROL_WATER_TARGET_TEMPERATURE_STATE = (
+        "core:ControlWaterTargetTemperatureState"  # int
+    )
     COUNTRY_CODE_STATE = "core:CountryCodeState"
     DATE_TIME_STATE = "core:DateTimeState"  # dict
     DHWP_SOFTWARE_VERSION_STATE = "core:DHWPSoftwareVersionState"  # string
@@ -63,7 +67,9 @@ class DeviceState(TextEnum):
     ECO_TEMPERATURE_STATE = "core:EcoRoomTemperatureState"
     ELECTRIC_ENERGY_CONSUMPTION_STATE = "core:ElectricEnergyConsumptionState"
     EXPECTED_NUM_SHOWER_STATE = "core:ExpectedNumberOfShowerState"  # int
-    FROST_PROTECTION_TARGET_TEMPERATURE_STATE = "core:FrostProtectionTargetTemperatureState"
+    FROST_PROTECTION_TARGET_TEMPERATURE_STATE = (
+        "core:FrostProtectionTargetTemperatureState"
+    )
     HALTED_TARGET_TEMPERATURE_STATE = "core:HaltedTargetTemperatureState"
     HEATING_STATUS_STATE = "core:HeatingStatusState"  # bool off
     LAST_ACTION_CONF_BUTTON_STATE = "internal:LastActionConfigButtonState"
@@ -106,21 +112,31 @@ class DeviceState(TextEnum):
     DHW_CAPACITY_STATE = "io:DHWCapacityState"  # float
     DHW_ERROR_STATE = "io:DHWErrorState"  # dict
     DHW_MODE_STATE = "io:DHWModeState"  # string
-    ELECTRIC_BOOSTER_OPERATING_TIME_STATE = "io:ElectricBoosterOperatingTimeState"  # int
-    ELECTRIC_EXTRA_MANAGEMENT_STATE = "io:ElectricalExtraManagementState"  # string auto,deactive
+    ELECTRIC_BOOSTER_OPERATING_TIME_STATE = (
+        "io:ElectricBoosterOperatingTimeState"  # int
+    )
+    ELECTRIC_EXTRA_MANAGEMENT_STATE = (
+        "io:ElectricalExtraManagementState"  # string auto,deactive
+    )
     EXTRACTION_OPTION_STATE = "io:ExtractionOptionState"  # string  fastExtractionSpeed,lowExtractionSpeed,noExtraction
     HEAT_PUMP_OPERATING_TIME_STATE = "io:HeatPumpOperatingTimeState"  # int
     INSTALLATION_STATE = "io:InstallationState"  # string -> class InstallationState
     MIDDLE_WATER_TEMPERATURE_STATE = "io:MiddleWaterTemperatureState"  # float
     OPERATING_MODE_CAPABILITIES_STATE = "io:OperatingModeCapabilitiesState"
-    OPERATING_RANGE_STATE = "io:OperatingRangeState"   # string
+    OPERATING_RANGE_STATE = "io:OperatingRangeState"  # string
     POWER_CONSUMPTION_FAN_STATE = "io:PowerConsumptionFanState"  # int
     POWER_HEAT_ELECTRICAL_STATE = "io:PowerHeatElectricalState"  # int
     POWER_HEAT_PUMP_STATE = "io:PowerHeatPumpState"  # int
-    PRIORITY_LOCK_LEVEL_STATE = "io:PriorityLockLevelState"  # string -> class PriorityLockLevelState
-    PRIORITY_LOCK_ORIGINATOR_STATE = "io:PriorityLockOriginatorState"  # string -> class PriorityLockOriginatorState
+    PRIORITY_LOCK_LEVEL_STATE = (
+        "io:PriorityLockLevelState"  # string -> class PriorityLockLevelState
+    )
+    PRIORITY_LOCK_ORIGINATOR_STATE = (
+        "io:PriorityLockOriginatorState"  # string -> class PriorityLockOriginatorState
+    )
     PROGRAMMING_SLOTS_STATE = "io:ProgrammingSlotsState"  # dict
-    RATE_MANAGEMENT_STATE = "io:RateManagementState"  # string forbidden,no,recommended,unsuitable,wanted
+    RATE_MANAGEMENT_STATE = (
+        "io:RateManagementState"  # string forbidden,no,recommended,unsuitable,wanted
+    )
     SMART_GRID_OPTION_STATE = "io:SmartGridOptionState"  # string active,deactive
 
 
