@@ -18,7 +18,7 @@ class CozytouchDevice(CozytouchObject):
         super(CozytouchDevice, self).__init__(data)
         self.states = data.get("states", {})
         self.definition = data.get("definition", {})
-        self.sensors = []
+        self.sensors = {}
         self.metadata: DeviceMetadata = None
         self.gateway: CozytouchGateway = None
         self.place: CozytouchPlace = None

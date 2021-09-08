@@ -138,7 +138,7 @@ class Handler:
     def __build(self, data, client=None, metadata=None, gateway=None, place=None, sensors=None, parent=None):
         """Build device object."""
         if sensors is None:
-            sensors = []
+            sensors = {}
         device = None
         if "widget" not in data or "uiClass" not in data:
             raise CozytouchException("Unable to identify device")
