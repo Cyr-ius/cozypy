@@ -1,6 +1,5 @@
 """Cozytouch API."""
 import asyncio
-from cozytouchpy.objects import device
 import datetime
 import json
 import logging
