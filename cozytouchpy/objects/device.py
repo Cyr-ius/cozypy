@@ -137,7 +137,7 @@ class CozytouchDevice(CozytouchObject):
         if self.client is None:
             raise CozytouchException("Unable to execute command")
         logger.debug("Update states sensors")
-        self.states = await self.client.get_device_info(self.deviceUrl)
+        self.states = await self.client.get_device_state(self.deviceUrl)
 
     def __str__(self):
         """Definition."""
