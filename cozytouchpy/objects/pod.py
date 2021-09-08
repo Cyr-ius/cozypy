@@ -11,7 +11,7 @@ class CozytouchPod(CozytouchDevice):
 
     @property
     def available(self):
-        """Avaiblable status."""
+        """Available status."""
         return self.data["available"]
 
     @property

@@ -43,8 +43,8 @@ class CozytouchContactSensor(CozytouchSensor):
         return state != "closed"
 
 
-class CozytouchElectrecitySensor(CozytouchSensor):
-    """Electrecity sensor."""
+class CozytouchElectricitySensor(CozytouchSensor):
+    """Electricity sensor."""
 
     @property
     def sensor_class(self):

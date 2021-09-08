@@ -11,7 +11,7 @@ __all__ = [
     "CozytouchPod",
     "CozytouchContactSensor",
     "CozytouchCumulativeFossilEnergyConsumptionSensor",
-    "CozytouchElectrecitySensor",
+    "CozytouchElectricitySensor",
     "CozytouchOccupancySensor",
     "CozytouchTemperatureSensor",
     "CozytouchWaterHeater",
@@ -28,7 +28,7 @@ from .pod import CozytouchPod
 from .sensors import (
     CozytouchContactSensor,
     CozytouchCumulativeFossilEnergyConsumptionSensor,
-    CozytouchElectrecitySensor,
+    CozytouchElectricitySensor,
     CozytouchOccupancySensor,
     CozytouchTemperatureSensor,
 )

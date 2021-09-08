@@ -38,8 +38,8 @@ class DeviceType:
     TEMPERATURE = "TemperatureSensor"
     CONTACT = "ContactSensor"
     OCCUPANCY = "OccupancySensor"
-    ELECTRECITY = "CumulativeElectricPowerConsumptionSensor"
-    DHW_ELECTRECITY = "DHWRelatedElectricalEnergyConsumptionSensor"
+    ELECTRICITY = "CumulativeElectricPowerConsumptionSensor"
+    DHW_ELECTRICITY = "DHWRelatedElectricalEnergyConsumptionSensor"
     FOSSIL_ENERGY = "CumulativeFossilEnergyConsumptionSensor"
 
     # Actuators - Controllable Name
@@ -85,7 +85,7 @@ class DeviceType:
     CLASS_TEMPERATURE = [TEMPERATURE]
     CLASS_CONTACT = [CONTACT]
     CLASS_OCCUPANCY = [OCCUPANCY]
-    CLASS_ELECTRECITY = [ELECTRECITY, DHW_ELECTRECITY]
+    CLASS_ELECTRICITY = [ELECTRICITY, DHW_ELECTRICITY]
     CLASS_FOSSIL = [FOSSIL_ENERGY]
 
     # Class Actuators
@@ -103,8 +103,8 @@ class DeviceType:
             cls.TEMPERATURE,
             cls.CONTACT,
             cls.OCCUPANCY,
-            cls.ELECTRECITY,
-            cls.DHW_ELECTRECITY,
+            cls.ELECTRICITY,
+            cls.DHW_ELECTRICITY,
             cls.FOSSIL_ENERGY,
         ]
 

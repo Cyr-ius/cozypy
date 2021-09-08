@@ -32,7 +32,7 @@ class CozytouchWaterHeater(CozytouchDevice):
 
     @property
     def current_temperature(self):
-        """Return tempereture (middle water heater)."""
+        """Return temperature (middle water heater)."""
         return self.get_state(ds.MIDDLE_WATER_TEMPERATURE_STATE)
 
     @property

@@ -1,5 +1,6 @@
 """Cozytouch API."""
 import asyncio
+from cozytouchpy.objects import device
 import datetime
 import json
 import logging
@@ -11,7 +12,7 @@ import aiohttp
 from .constant import API_THROTTLE, COZYTOUCH_ENDPOINTS, USER_AGENT
 from .exception import (AuthentificationFailed, CozytouchException,
                         HttpRequestFailed, HttpTimeoutExpired)
-from .handlers import DevicesHandler, SetupHandler
+from .handlers import Handler
 from .utils import CozytouchEncoder
 
 logger = logging.getLogger(__name__)
@@ -131,9 +132,9 @@ class CozytouchClient:
                     error=response_json["error"], code=response_json["errorCode"]
                 )
             )
-        return SetupHandler(response_json, self)
+        return Handler(response_json, self)
 
-    async def devices_data(self):
+    async def get_devices_data(self):
         """Fetch data."""
         async with self._lock:  # Prevent call to the API if there is already one running
             fresh = False
@@ -163,21 +164,21 @@ class CozytouchClient:
 
     async def get_devices(self):
         """Get all devices (devices, places)."""
-        data = await self.devices_data()
-        return DevicesHandler(data, self)
+        setup = await self.get_setup()
+        return setup.devices
 
-    async def devices_info(self):
+    async def get_devices_info(self):
         """Get all infos device."""
         self._devices_info = {}
-        data = await self.devices_data()
+        data = await self.get_devices_data()
         for dev in data:
-            metadata = SetupHandler.parse_url(dev["deviceURL"])
+            metadata = Handler.parse_url(dev["deviceURL"])
             self._devices_info[metadata.base_url] = dev
         return self._devices_info
 
-    async def get_device_info(self, device_url):
+    async def get_device_state(self, device_url):
         """Get device info (devices, places)."""
-        datas = await self.devices_info()
+        datas = await self.get_devices_info()
 
         if device_url not in datas:
             raise CozytouchException(
@@ -189,16 +190,12 @@ class CozytouchClient:
 
     async def get_device(self, device_url):
         """Get device object (devices, places)."""
-        datas = await self.devices_info()
+        devices = await self.get_devices()
 
-        if device_url not in datas:
-            raise CozytouchException(
-                "Unable to retrieve device {device_url}: not in available devices".format(
-                    device_url=device_url
-                )
-            )
-        
-        return DevicesHandler.build(datas.get(device_url), self)
+        for item in devices.values():
+            if item.deviceUrl == device_url:
+                return item
+        return None
 
     async def send_commands(self, commands):
         """Send command to device."""
