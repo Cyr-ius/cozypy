@@ -25,6 +25,7 @@ async def relogin(invocation: dict[str, Any]) -> None:
 async def refresh_listener(invocation: dict[str, Any]) -> None:
     await invocation["args"][0].register_event_listener()
 
+
 class CozytouchClient:
     """Client session."""
 
@@ -52,7 +53,6 @@ class CozytouchClient:
         self, path: str, payload: JSON | None = None, data: JSON | None = None
     ) -> Any:
         """Make a POST request to API"""
-        logger.debug(f"POST {self.server.endpoint}{path} {payload} {data}")
         async with self.session.post(
             f"{self.server.endpoint}{path}",
             data=data,
@@ -63,15 +63,9 @@ class CozytouchClient:
 
     async def __get(self, path: str) -> Any:
         """Make a GET request to the API"""
-        logger.debug(f"GET {path}")
         async with self.session.get(f"{self.server.endpoint}{path}") as response:
             await self.check_response(response)
             return await response.json()
-
-    async def __delete(self, path: str) -> None:
-        """Make a DELETE request to the API"""
-        async with self.session.delete(f"{self.server.endpoint}{path}") as response:
-            await self.check_response(response)
 
     async def connect(
         self,
@@ -210,7 +204,7 @@ class CozytouchClient:
     ) -> str:
         """Send several commands in one call"""
         if isinstance(commands, str):
-            command = Command(commands)
+            commands = Command(commands)
 
         payload = {
             "label": label,

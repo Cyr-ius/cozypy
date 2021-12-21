@@ -125,7 +125,7 @@ class CozytouchClimate(CozytouchDevice):
             await self.set_mode(dc.SET_COOLING_ON_OFF_STATE, OnOffState.ON)
         elif thermal_mode == ThermalState.HEATCOOL:
             await self.set_mode(dc.SET_HEATING_ON_OFF_STATE, OnOffState.ON)
-            await self.set_mode(dc.SET_COOLING_ON_OFF_STATE, OnOffState.ON)            
+            await self.set_mode(dc.SET_COOLING_ON_OFF_STATE, OnOffState.ON)
         elif self.widget == dt.APC_HEATING_ZONE:
             await self.set_mode(dc.SET_PASS_APC_HEATING_MODE, thermal_mode)
 
@@ -149,7 +149,7 @@ class CozytouchClimate(CozytouchDevice):
         if thermal_mode == ThermalState.HEAT:
             await self.set_mode(dc.SET_COMFORT_HEATING_TARGET_TEMPERATURE, temperature)
         elif thermal_mode == ThermalState.COOL:
-            await self.set_mode(dc.SET_COMFORT_COOLING_TARGET_TEMPERATURE, temperature)        
+            await self.set_mode(dc.SET_COMFORT_COOLING_TARGET_TEMPERATURE, temperature)
 
     async def set_derogated_temperature(self, temperature: float):
         """Set derogate temp."""

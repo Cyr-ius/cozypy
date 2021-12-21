@@ -60,7 +60,6 @@ USER_AGENT = "Home assistant/Cozytouch"
 API_THROTTLE = 60  # Delay minimum between API call
 
 
-
 class DeviceType:
     """Device type."""
 
