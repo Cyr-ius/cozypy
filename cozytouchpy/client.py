@@ -36,6 +36,7 @@ class CozytouchClient:
         self.server = server
         self.session = session if session else ClientSession()
         self.event_listener_id = None
+        self._devices_info = {}
 
     async def __aenter__(self):
         return self
@@ -79,7 +80,6 @@ class CozytouchClient:
         if response.get("success"):
             if register_event_listener:
                 await self.register_event_listener()
-                self.is_connected = True
             return True
 
         return False
@@ -154,7 +154,6 @@ class CozytouchClient:
 
     async def get_devices_info(self):
         """Get all infos device."""
-        self._devices_info = {}
         data = await self.get_devices_data()
         for dev in data:
             metadata = Handler.parse_url(dev["deviceURL"])
