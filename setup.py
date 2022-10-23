@@ -31,7 +31,7 @@ with open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='cozytouchpy',
-    version=find_version("cozytouchpy", "__init__.py"),
+    version='replace_by_workflow',
     packages=find_packages(),
     description='Cozytouch python client (fork cozypy)',
     long_description=long_description,
