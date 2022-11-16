@@ -18,7 +18,7 @@ logger.addHandler(ch)
 username = "my-username"
 password = "my-password"
 
-client = CozytouchClient(username, password)
+client = CozytouchClient(username, password, "atlantic_cozytouch")
 
 
 async def async_demo():
