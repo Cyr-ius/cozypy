@@ -20,7 +20,7 @@ Used to obtain information from the following sensors:
      username="my-username"
      password="my-password"
      
-     client = CozytouchClient(username, password)
+     client = CozytouchClient(username, password, 'atlantic_cozytouch')
      client.connect()
      setup = await client.async_get_setup() 
      for place in setup.places:  
