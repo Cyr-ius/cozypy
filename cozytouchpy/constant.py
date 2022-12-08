@@ -25,9 +25,9 @@ class Command(dict):  # type: ignore
         dict.__init__(self, name=name, parameters=parameters)
 
 
-COZYTOUCH_ATLANTIC_API = "https://api.groupe-atlantic.com"
+COZYTOUCH_ATLANTIC_API = "https://apis.groupe-atlantic.com"
 COZYTOUCH_CLIENT_ID = (
-    "czduc0RZZXdWbjVGbVV4UmlYN1pVSUM3ZFI4YTphSDEzOXZmbzA1ZGdqeDJkSFVSQkFTbmhCRW9h"
+    "Q3RfMUpWeVRtSUxYOEllZkE3YVVOQmpGblpVYToyRWNORHpfZHkzNDJVSnFvMlo3cFNKTnZVdjBh"
 )
 
 SUPPORTED_SERVERS = {
